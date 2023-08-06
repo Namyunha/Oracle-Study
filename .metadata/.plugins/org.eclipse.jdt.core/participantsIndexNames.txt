@@ -1,0 +1,11 @@
+INDEX VERSION 1.134
+C:\Users\Namyunha\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2299130066.index
+\test2\src\main\java
+C:\Users\Namyunha\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2182146902.index
+\test1_practice\src\main\java
+C:\Users\Namyunha\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2671348649.index
+\project_20230727\src\main\java
+C:\Users\Namyunha\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3667110742.index
+\test1\src\main\java
+C:\Users\Namyunha\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1519471454.index
+\test1_practice\src\main\java

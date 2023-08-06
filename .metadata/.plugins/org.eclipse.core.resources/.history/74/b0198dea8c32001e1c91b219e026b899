@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+<tr>
+	<th>사원번호</th>
+	<th>사원명</th>
+	<th>소속부서</th>
+	<th>직급</th>
+	<th>직책</th>
+	<th>연락처</th>
+</tr>
+<%
+	request.setCharacterEncoding("UTF-8");
+	String searchId = request.getParameter("id");
+	String searchDept = request.getParameter("dept");
+	System.out.println("SearchId = " + searchId + "searchDept" + searchDept);
+%>
+<tr>
+	<td><%=searchId %></td>
+	<td><%=searchDept %></td>
+</tr>
+</table>
+</body>
+</html>

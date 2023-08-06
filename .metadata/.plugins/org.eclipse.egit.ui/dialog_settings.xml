@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="CommitDialog.authorValues">
+		<item value="남윤하 &lt;ajs998@naver.com&gt;"/>
+	</list>
+	<list key="CommitDialog.committerValues">
+		<item value="남윤하 &lt;ajs998@naver.com&gt;"/>
+	</list>
+	<list key="EGit.KnownHosts">
+		<item value="git.eclipse.org"/>
+		<item value="github.com"/>
+		<item value="bitbucket.org"/>
+	</list>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item key="MAIN_SASH_FORM_ORIENTATION_VERTICAL" value="true"/>
+		<item key="HORIZONTAL_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="STAGING_SASH_FORM_WEIGHT" value="200,200"/>
+		<item key="sortItemState" value="false"/>
+	</section>
+	<section name="GitCommitMessageComponent">
+	</section>
+	<section name="org.eclipse.egit.ui.internal.dialogs.RebaseTargetSelectionDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="663"/>
+		<item key="DIALOG_Y_ORIGIN" value="128"/>
+		<item key="DIALOG_WIDTH" value="613"/>
+		<item key="DIALOG_HEIGHT" value="594"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+</section>
