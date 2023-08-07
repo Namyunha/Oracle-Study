@@ -1,0 +1,16 @@
+<%@ page import="com.test.test2.dao.MemberDAO" %>
+<%@ page import="com.test.test2.dto.MemberDTO" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>홈쇼핑 회원 정보 수정</h1>
+<%@include file="header.jsp"%>
+<%@include file="nav.jsp"%>
+
+</body>
+</html>

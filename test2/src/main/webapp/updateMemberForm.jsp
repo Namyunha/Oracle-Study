@@ -21,22 +21,11 @@
 <%
     MemberDAO memberDAO = new MemberDAO();
     String custno = request.getParameter("custno");
-    MemberDTO memberDTO = memberDAO.findById(custno);
 %>
 <%@include file="header.jsp" %>
 <%@include file="nav.jsp" %>
 <div id="contents">
-    <form action="updateMember.jsp" name="updateForm">
-        회원번호(자동발생): <input type="text" name="custno" value="<%=memberDTO.getCustno()%>"> <br>
-        회원성명: <input type="text" name="custname" value="<%=memberDTO.getCustname()%>"> <br>
-        회원전화: <input type="text" name="phone" value="<%=memberDTO.getPhone()%>"> <br>
-        회원주소: <input type="text" name="address" value="<%=memberDTO.getAddress()%>"> <br>
-        가입일자: <input type="text" name="joindate" value="<%=memberDTO.getJoindate()%>"> <br>
-        고객등급(A:VIP, B:일반, C:직원): <input type="text" name="grade" value="<%=memberDTO.getGrade()%>"> <br>
-        도시코드: <input type="text" name="city" value="<%=memberDTO.getCity()%>"> <br>
-        <input type="button" value="등록" onclick="saveCheck()">
-        <input type="button" onclick="location.href='findMember.jsp'" value="조회">
-    </form>
+    
 </div>
 <%@include file="footer.jsp"%>
 </body>
