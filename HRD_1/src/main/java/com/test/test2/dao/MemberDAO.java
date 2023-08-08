@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.test2.model.SalesDTO;
 import com.test.test2.dto.MemberDTO;
 import com.test.test2.dto.SaleDTO;
 
@@ -110,4 +109,31 @@ public class MemberDAO {
 	        return memberDTO;
 	    }
 	 
+	public List<SaleDTO> saleList() throws Exception{
+		con = getConnection();
+		String sql = "select m.custno, m.custname, " +
+				 "case    when m.grade='A' then 'VIP'" +
+				 "        when m.grade='B' then '일반'" +
+				 "        when m.grade='C' then '직원'" +
+				 "            else '없음'" +
+				 "    end as grade," +
+				 "    sum(mo.price) as total " +
+				 "    from member_tbl_02 m, money_tbl_02 mo" +
+				 "        where m.custno=mo.custno" +
+				 "            group by m.custno, m.custname, m.grade" +
+				 "                order by total desc"; 
+		pstmt = con.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		List<SaleDTO> salesList = new ArrayList<>();
+		while(rs.next()) {
+			SaleDTO saleDTO = new SaleDTO();
+			saleDTO.setCustno(rs.getInt(1));
+			saleDTO.setCustname(rs.getString(2));
+			saleDTO.setGrade(rs.getString(3));
+			saleDTO.setSaleamount(rs.getInt(4));
+			System.out.println("dao에있는 " + rs.getString(2));
+			salesList.add(saleDTO);
+		}
+		return salesList;
+	}
 }

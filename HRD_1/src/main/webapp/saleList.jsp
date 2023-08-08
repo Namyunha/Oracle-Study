@@ -1,7 +1,7 @@
-<%@page import="com.test.test2.dto.SaleDTO"%>
-<%@page import="java.util.List"%>
+<%@ page import="java.util.List"%>
 <%@ page import="com.test.test2.dao.MemberDAO" %>
 <%@ page import="com.test.test2.dto.MemberDTO" %>
+<%@ page import="com.test.test2.dto.SaleDTO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -24,7 +24,8 @@
 	</thead>
 <%
 	MemberDAO memberDAO = new MemberDAO();
-	List<SaleDTO> saleList = memberDAO.findSaleList();
+	List<SaleDTO> saleList = memberDAO.saleList();
+	System.out.println(saleList);
 	for(SaleDTO saleDTO : saleList){
 %>
 	<tbody>
