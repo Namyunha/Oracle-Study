@@ -1,8 +1,10 @@
 package com.test.test3.dto;
 
 public class VoteDTO {
-	private String vJumin;
 	private String vName;
+	private String vJumin;
+	private String vAge;
+	private String vGender;
 	private String mNo;
 	private String vTime;
 	private String vArea;
@@ -44,12 +46,25 @@ public class VoteDTO {
 	public void setvConfirm(String vConfirm) {
 		this.vConfirm = vConfirm;
 	}
-	
+	public String getvAge() {
+		return vAge;
+	}
+	public void setvAge(String vAge) {
+		this.vAge = vAge;
+	}
+	public String getvGender() {
+		return vGender;
+	}
+	public void setvGender(String vGender) {
+		this.vGender = vGender;
+	}
 	@Override
 	public String toString() {
-		return "VoteDTO [vJumin=" + vJumin + ", vName=" + vName + ", mNo=" + mNo + ", vTime=" + vTime + ", vArea="
-				+ vArea + ", vConfirm=" + vConfirm + "]";
+		return "VoteDTO [vName=" + vName + ", vJumin=" + vJumin + ", vAge=" + vAge + ", vGender=" + vGender + ", mNo="
+				+ mNo + ", vTime=" + vTime + ", vArea=" + vArea + ", vConfirm=" + vConfirm + "]";
 	}
+	
+	
 	
 	
 }
