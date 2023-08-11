@@ -9,12 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-	td{
-		text-align: center;
-		border: 1px solid black;
-	}
-</style>
+
 </head>
 <body>
 	<%@ include file="header.jsp" %>
@@ -30,7 +25,7 @@
 			<tbody>
 			<%
 				VoteDAO voteDAO = new VoteDAO();
-				List<RankingDTO> rankingList = voteDAO.findAllRanking();
+				List<RankingDTO> rankingList = (List<RankingDTO>) request.getAttribute("rankingList");
 				for(RankingDTO ranking : rankingList) {
 			%>
 			<tr>

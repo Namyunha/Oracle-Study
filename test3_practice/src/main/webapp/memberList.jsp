@@ -28,7 +28,7 @@
 		<tbody>
 		<% 
 			VoteDAO voteDAO = new VoteDAO();
-			List<MemberDTO> memberList = voteDAO.findAll();
+			List<MemberDTO> memberList = (List<MemberDTO>) request.getAttribute("memberList");
 			for(MemberDTO memberDTO : memberList){
 				System.out.println(memberDTO.getmName());
 			

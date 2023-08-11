@@ -27,7 +27,7 @@
 		<tbody>
 		<%
 			VoteDAO voteDAO = new VoteDAO();
-			List<VoteDTO> voteList = voteDAO.findVoteAll();
+			List<VoteDTO> voteList = (List<VoteDTO>)request.getAttribute("voteList");
 			for(VoteDTO voteDTO : voteList){
 				System.out.println(voteDTO.getvName());
 		%>
