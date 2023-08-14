@@ -5,6 +5,8 @@ C:\Users\Namyunha\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\
 \test4\src\main\java
 C:\Users\Namyunha\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2671348649.index
 \project_20230727\src\main\java
+C:\Users\Namyunha\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\882638520.index
+\test4_practice\src\main\java
 C:\Users\Namyunha\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3667110742.index
 \test1\src\main\java
 C:\Users\Namyunha\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\246365073.index
@@ -15,6 +17,8 @@ C:\Users\Namyunha\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\
 \test3_practice\src\main\java
 C:\Users\Namyunha\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2299130066.index
 \test2\src\main\java
+C:\Users\Namyunha\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2534963991.index
+\test4_practice\src\main\java
 C:\Users\Namyunha\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\921385983.index
 \HRD_1\src\main\java
 C:\Users\Namyunha\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4121149721.index
