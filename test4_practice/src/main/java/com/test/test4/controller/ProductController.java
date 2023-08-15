@@ -60,6 +60,14 @@ public class ProductController extends HttpServlet {
 			System.out.println("result = " + result);
 			request.setAttribute("saveResult", result);
 			resultPage = "saveProduct.jsp";
+		} else if(action.equals("findForm")) {
+			resultPage = "findForm.jsp";
+		} else if(action.equals("find")) {
+			String code = request.getParameter("code");
+			System.out.println("code = " + code);
+			ProductVO productVO = productDAO.readOne(code);
+			request.setAttribute("product", productVO);
+			resultPage = "find.jsp";
 		}
 		
 		else if(action.equals("index")) {

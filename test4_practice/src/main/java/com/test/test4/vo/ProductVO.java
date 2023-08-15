@@ -9,7 +9,6 @@ public class ProductVO {
 	private int sale;
 	private String gcode;
 	
-	
 	public ProductVO(String code, String pname, int cost, int pnum, int inum, int sale, String gcode) {
 		this.code = code;
 		this.pname = pname;
@@ -21,6 +20,13 @@ public class ProductVO {
 	}
 	
 	
+		
+	public ProductVO() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
 	public String getCode() {
 		return code;
 	}

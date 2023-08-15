@@ -10,12 +10,16 @@
 	<h1>생산관리 시스템</h1>
 	<label>생산관리 메인메뉴</label>
 	<div>
-		<button onclick="saveProduct()">제품입력</button><button>제품조회</button><button>우선생산제품</button><button>이익순위</button><br>
+		<button onclick="saveProduct()">제품입력</button><button onclick="findProduct()">제품조회</button><button>우선생산제품</button><button>이익순위</button><br>
 		<button>그룹별재고수량</button>
 	</div>
 	<script>
 		const saveProduct = () => {
 			location.href= "productForm";
+		}
+		
+		const findProduct = () => {
+			location.href="findForm";
 		}
 	</script>
 </body>

@@ -34,9 +34,29 @@ public class ProductDAOImpl extends DAOBase implements ProductDAO {
 	}
 
 	@Override
-	public ProductVO readOne(ProductVO vo) throws SQLException {
+	public ProductVO readOne(String code) throws SQLException {
 		// TODO Auto-generated method stub
-		return null;
+		con = getConnection();
+		System.out.println("readOne = " + code);
+		String sql = "select * from product where code=?";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, code);
+		rs = pstmt.executeQuery();
+		ProductVO productVO = new ProductVO();
+		System.out.println(rs.getString(1));
+		if(rs.next()) {
+			productVO.setCode(rs.getString(1));
+			productVO.setPname(rs.getString(2));
+			productVO.setCost(rs.getInt(3));
+			productVO.setPnum(rs.getInt(4));
+			productVO.setInum(rs.getInt(5));
+			productVO.setSale(rs.getInt(6));
+			productVO.setGcode(rs.getString(7));
+		}
+		System.out.println(productVO.getPname());
+		rs.close();
+		closeDBResources(pstmt, con);
+		return productVO;
 	}
 
 	@Override
