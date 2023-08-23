@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/")
 public class ProductController extends HttpServlet{
-
+	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
@@ -21,7 +21,7 @@ public class ProductController extends HttpServlet{
 			throw new RuntimeException(e);
 		}
 	}
-
+	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
@@ -43,3 +43,7 @@ public class ProductController extends HttpServlet{
 		dispatcher.forward(request, response);
 	}
 }
+
+
+
+
