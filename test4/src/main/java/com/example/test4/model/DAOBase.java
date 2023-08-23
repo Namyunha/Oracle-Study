@@ -2,7 +2,7 @@ package com.example.test4.model;
 
 import java.sql.*;
 
-// DB 접속을 위한 Connectio, 접속 종료 등을 위한 close 메서드 등을 정의하고 있는 클래스
+// DB 접속을 위한 Connection, 접속 종료 등을 위한 close 메서드 등을 정의하고 있는 클래스
 // DAO 인터페이스를 구현하고 있음.
 public class DAOBase implements DAO {
     public Connection getConnection() throws SQLException {

@@ -23,9 +23,7 @@ public class ProductServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
-
     // exception 처리가 이클립스에서 어떻게 되는지 확인!!
-
     // post 요청만 받음.
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

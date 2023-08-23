@@ -1,28 +1,20 @@
 package com.programmers.practice;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 public class practice1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int n = 3;
-		int i = 1;
-		long answer = -1;
-		while((i*i) != n) {
-			i++;
-			if((i*i) == n) {
-				long d = i+1;
-				answer = d*d;
-				break;
-			} else if((i*i) > n) {	
-				i = 0;
-				answer = -1;
-				break;
-			}
+		int[] a = {-1,0,1};
+		int[] b = {1,0,-1};
+		int[] c = new int[a.length];
+		int answer = 0;
+		for(int i = 0; i < a.length; i++) {
+			answer += c[i] = a[i] * b[i];
 		}
-		
-		System.out.println(answer);
+		System.out.println("\n answer = " + answer);
 	}
-
 }
+	
