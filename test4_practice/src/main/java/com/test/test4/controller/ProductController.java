@@ -39,6 +39,16 @@ public class ProductController extends HttpServlet{
 		String action = uri.substring(lastIndex);
 		System.out.println("Action = " + action);
 		String resultPage = "";
+		if(action.equals("/saveProductionForm")) {
+			resultPage = "saveProductionForm.jsp";
+		} else if(action.equals("/findProductionForm")) {
+			resultPage = "findProductionForm.jsp";
+		} else if(action.equals("/findProduction")) {
+			resultPage = "/findProduction.jsp";
+			String code = request.getParameter("code");
+			System.out.println("code = " + code);
+		}
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(resultPage);
 		dispatcher.forward(request, response);
 	}
