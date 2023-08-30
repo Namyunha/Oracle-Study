@@ -10,6 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.test.test4.dao.ProductionDAO;
+import com.test.test4.dao.ProductionDAOImpl;
+import com.test.test4.vo.ProductionVO;
+
 @WebServlet("/")
 public class ProductController extends HttpServlet{
 	
@@ -39,6 +43,8 @@ public class ProductController extends HttpServlet{
 		String action = uri.substring(lastIndex);
 		System.out.println("Action = " + action);
 		String resultPage = "";
+		ProductionDAOImpl productionDAO = new ProductionDAOImpl();
+		ProductionVO productionVO = new ProductionVO();
 		if(action.equals("/saveProductionForm")) {
 			resultPage = "saveProductionForm.jsp";
 		} else if(action.equals("/findProductionForm")) {
@@ -46,7 +52,8 @@ public class ProductController extends HttpServlet{
 		} else if(action.equals("/findProduction")) {
 			resultPage = "/findProduction.jsp";
 			String code = request.getParameter("code");
-			System.out.println("code = " + code);
+			ProductionVO readVO = productionDAO.readOne(code);
+			System.out.println(readVO.toString());
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(resultPage);

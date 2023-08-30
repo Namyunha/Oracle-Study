@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-		String code = request.getParameter("code");
-		System.out.print("findForm code = " + code);
-	%>
 	<h1>
 		findProduction
 	</h1>
