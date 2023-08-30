@@ -10,5 +10,5 @@ public interface ProductionDAO {
 	ProductionVO readOne(String code) throws SQLException;
 	List<ProductionVO> readList() throws SQLException;
 	int upgrade(ProductionVO vo) throws SQLException;
-	int delete(ProductionVO vo) throws SQLException;	
+	int delete(String code) throws SQLException;	
 }

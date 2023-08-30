@@ -57,9 +57,9 @@ public class ProductionDAOImpl extends DAOBase implements ProductionDAO {
 	public int upgrade(ProductionVO vo) throws SQLException {
 		// TODO Auto-generated method stub
 		System.out.println(vo.toString());
-		Connection con = getConnection();
+		con = getConnection();
 		String sql = "update product set pname=?,cost=?,pnum=?,inum=?,sale=?,gcode=? where code=?";
-		PreparedStatement pstmt = con.prepareStatement(sql);
+		pstmt = con.prepareStatement(sql);
 		pstmt.setString(1, vo.getPname());
 		pstmt.setLong(2, vo.getCost());
 		pstmt.setLong(3, vo.getPnum());
@@ -73,9 +73,25 @@ public class ProductionDAOImpl extends DAOBase implements ProductionDAO {
 	}
 
 	@Override
-	public int delete(ProductionVO vo) throws SQLException {
+	public int delete(String code) throws SQLException {
 		// TODO Auto-generated method stub
-		return 0;
+		con = getConnection();
+		String sql = "delete from product where code=?";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, code);
+		int result = pstmt.executeUpdate();
+		closeDBResources(pstmt, con);
+		return result;
 	}
 	
 }
+
+
+
+
+
+
+
+
+
+

@@ -9,16 +9,29 @@
 </head>
 <body>
 <%
+	int result = 0;
+	if(request.getAttribute("result") != null){
+		 result = (int) request.getAttribute("result");
+	}
 	ProductionVO productionVO = (ProductionVO)request.getAttribute("product");
 	System.out.print("findProduction: production = " + productionVO.toString());
-%>
+%>	
+	<script>
+		if(<%=request.getAttribute("result") %>!= null){
+			if(<%=result%> == 1){
+				alert("수정에 성공 하였습니다.");
+			} else {
+				alert("수정에 실패 하였습니다.");
+			}
+		};
+	</script>
 	<h1>생산관리 조회 & 수정 & 삭제 화면</h1>
 	<label for="findForm">생산관리 조회 & 수정 & 삭제 화면</label>
 	<form id="findForm" name="findForm" method="post">
 		<ul>
 			<li>
 				<label for="code">제품코드</label>
-				<input id="code" type="text" name="code" value=<%=productionVO.getCode() %>>
+				<input id="code" type="text" name="code" value=<%=productionVO.getCode() %> readonly>
 			</li>
 			<li>
 				<label for="pname">제품이름</label>
@@ -70,8 +83,8 @@
 		}
 		
 		const deleteProduction = () => {
-			findForm.action = "deltetProduction";
-			findForm.submit();
+		    findForm.action = "deleteProduction"; // 수정된 부분
+		    findForm.submit();
 		}
 		
 		const goHome = () => {

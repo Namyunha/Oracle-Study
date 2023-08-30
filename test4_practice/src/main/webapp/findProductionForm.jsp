@@ -47,8 +47,6 @@
 		</ul>
 		<div id="btnGroup">
 			<input onclick="findProduction()" type="button" value="조회">
-			<input type="button" value="수정">
-			<input type="button" value="삭제">
 			<input onclick="goHome()" type="button" value="메인화면">
 		</div>
 	</form>

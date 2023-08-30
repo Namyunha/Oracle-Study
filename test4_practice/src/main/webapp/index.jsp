@@ -7,6 +7,21 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%
+		if(request.getAttribute("result")!=null){
+		int result = (int) request.getAttribute("result");
+		
+	%>
+	<script>
+		if(<%=result%> == 1){
+			alert("삭제에 성공 하셨습니다.");	
+		}  else {
+			alert("삭제에 실패 하였습니다.");
+		}
+	</script>
+	<%
+		}
+	%>
 	<h1>생산관리 시스템</h1>
 	<label>생산관리 매안매뉴</label>
 	<button onclick="location.href='saveProductionForm'">제품입력</button>

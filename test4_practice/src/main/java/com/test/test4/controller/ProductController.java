@@ -49,6 +49,7 @@ public class ProductController extends HttpServlet{
 			resultPage = "/index.jsp";
 		}else if(action.equals("/saveProductionForm")) {
 			resultPage = "saveProductionForm.jsp";
+			
 		} else if(action.equals("/findProductionForm")) {
 			resultPage = "findProductionForm.jsp";
 		} else if(action.equals("/findProduction")) {
@@ -67,8 +68,14 @@ public class ProductController extends HttpServlet{
 			String gcode = request.getParameter("gcode");
 			ProductionVO vo = new ProductionVO(code, pname, cost, pnum, inum, sale, gcode);
 			System.out.println("process VO  = " + vo.toString());
-			productionDAO.upgrade(vo);
+			int result = productionDAO.upgrade(vo);
+			request.setAttribute("result", result);
 			request.setAttribute("product", vo);
+		} else if(action.equals("/deleteProduction")) {
+			String code = request.getParameter("code");
+			int result = productionDAO.delete(code);
+			request.setAttribute("result", result);
+			resultPage = "/index.jsp";
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(resultPage);
