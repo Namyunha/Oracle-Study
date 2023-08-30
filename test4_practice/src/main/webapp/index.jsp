@@ -15,9 +15,7 @@
 	<script>
 		if(<%=result%> == 1){
 			alert("삭제에 성공 하셨습니다.");	
-		}  else {
-			alert("삭제에 실패 하였습니다.");
-		}
+		} 
 	</script>
 	<%
 		}
@@ -26,8 +24,8 @@
 	<label>생산관리 매안매뉴</label>
 	<button onclick="location.href='saveProductionForm'">제품입력</button>
 	<button onclick="location.href='findProductionForm'">제품조회</button>
-	<button>우선생산제품</button>
-	<button>이익순위</button>
-	<button>그룹별재고수량</button>
+	<button onclick="location.href='findByPriority'">우선생산제품</button>
+	<button onclick="location.href='findByProfit'">이익순위</button>
+	<button onclick="location.href='findByGroup'">그룹별재고수량</button>
 </body>
 </html>
