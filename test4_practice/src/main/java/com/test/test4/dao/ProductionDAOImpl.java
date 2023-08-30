@@ -43,7 +43,7 @@ public class ProductionDAOImpl extends DAOBase implements ProductionDAO {
 			productionVO.setSale(rs.getLong(6));
 			productionVO.setGcode(rs.getString(7));
 		}
-		closeDBResources(pstmt, con);
+		closeDBResources(rs, pstmt, con);
 		return productionVO;
 	}
 
@@ -57,7 +57,19 @@ public class ProductionDAOImpl extends DAOBase implements ProductionDAO {
 	public int upgrade(ProductionVO vo) throws SQLException {
 		// TODO Auto-generated method stub
 		System.out.println(vo.toString());
-		return 0;
+		Connection con = getConnection();
+		String sql = "update product set pname=?,cost=?,pnum=?,inum=?,sale=?,gcode=? where code=?";
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, vo.getPname());
+		pstmt.setLong(2, vo.getCost());
+		pstmt.setLong(3, vo.getPnum());
+		pstmt.setLong(4, vo.getInum());
+		pstmt.setLong(5, vo.getSale());
+		pstmt.setString(6, vo.getGcode());
+		pstmt.setString(7, vo.getCode());
+		int result = pstmt.executeUpdate();
+		closeDBResources(pstmt, con);
+		return result;
 	}
 
 	@Override
