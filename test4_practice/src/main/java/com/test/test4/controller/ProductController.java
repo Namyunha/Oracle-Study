@@ -45,7 +45,9 @@ public class ProductController extends HttpServlet{
 		String resultPage = "";
 		ProductionDAOImpl productionDAO = new ProductionDAOImpl();
 		ProductionVO productionVO = new ProductionVO();
-		if(action.equals("/saveProductionForm")) {
+		if(action.equals("/index")) {
+			resultPage = "/index.jsp";
+		}else if(action.equals("/saveProductionForm")) {
 			resultPage = "saveProductionForm.jsp";
 		} else if(action.equals("/findProductionForm")) {
 			resultPage = "findProductionForm.jsp";
@@ -53,7 +55,20 @@ public class ProductController extends HttpServlet{
 			resultPage = "/findProduction.jsp";
 			String code = request.getParameter("code");
 			ProductionVO readVO = productionDAO.readOne(code);
-			System.out.println(readVO.toString());
+			request.setAttribute("product", readVO);
+		} else if(action.equals("/updateProduction")) {
+			resultPage = "/findProduction.jsp";
+			String code = request.getParameter("code");
+			String pname = request.getParameter("pname");
+			long cost = Long.parseLong(request.getParameter("cost"));
+			long pnum = Long.parseLong(request.getParameter("pnum"));
+			long inum = Long.parseLong(request.getParameter("inum"));
+			long sale = Long.parseLong(request.getParameter("sale"));
+			String gcode = request.getParameter("gcode");
+			ProductionVO vo = new ProductionVO(code, pname, cost, pnum, inum, sale, gcode);
+			System.out.println("process VO  = " + vo.toString());
+			productionDAO.upgrade(vo);
+			request.setAttribute("product", vo);
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(resultPage);

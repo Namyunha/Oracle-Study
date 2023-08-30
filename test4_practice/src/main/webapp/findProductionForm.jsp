@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>생산관리 조회 & 수정 화면</h1>
+	<h1>생산관리 조회 화면</h1>
 	<label for="findForm">생산관리조회화면</label>
-	<form id="findForm" name="findForm" action="findProduction" method="post">
+	<form id="findForm" name="findForm"  method="post">
 		<ul>
 			<li>
 				<label for="code">제품코드</label>
@@ -49,7 +49,7 @@
 			<input onclick="findProduction()" type="button" value="조회">
 			<input type="button" value="수정">
 			<input type="button" value="삭제">
-			<input type="button" value="메인화면">
+			<input onclick="goHome()" type="button" value="메인화면">
 		</div>
 	</form>
 	<script>
@@ -60,9 +60,15 @@
 				alert("제품 코드를 입력해주세요");
 				code.focus();
 			} else {
+				findForm.action = "findProduction";
 				findForm.submit();
 			}
 		}
+		const goHome = () => {
+			findForm.action = "index";
+			findForm.submit();
+		}
+		
 	</script>
 </body>
 </html>

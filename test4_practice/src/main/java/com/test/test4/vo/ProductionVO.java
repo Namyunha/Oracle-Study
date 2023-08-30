@@ -1,7 +1,6 @@
 package com.test.test4.vo;
 
 public class ProductionVO {
-	private int id;
 	private String code;
 	private String pname;
 	private	long cost;
@@ -9,12 +8,6 @@ public class ProductionVO {
 	private long inum;
 	private long sale;
 	private String gcode;
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public String getCode() {
 		return code;
 	}
@@ -58,9 +51,21 @@ public class ProductionVO {
 		this.gcode = gcode;
 	}
 	
+	
+	public ProductionVO() {
+	}
+	public ProductionVO(String code, String pname, long cost, long pnum, long inum, long sale, String gcode) {
+		this.code = code;
+		this.pname = pname;
+		this.cost = cost;
+		this.pnum = pnum;
+		this.inum = inum;
+		this.sale = sale;
+		this.gcode = gcode;
+	}
 	@Override
 	public String toString() {
-		return "ProductVO [id=" + id + ", code=" + code + ", pname=" + pname + ", cost=" + cost + ", pnum=" + pnum
+		return "ProductVO [ code=" + code + ", pname=" + pname + ", cost=" + cost + ", pnum=" + pnum
 				+ ", inum=" + inum + ", sale=" + sale + ", gcode=" + gcode + "]";
 	}
 	

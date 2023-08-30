@@ -22,7 +22,11 @@ public class ProductionDAOImpl extends DAOBase implements ProductionDAO {
 	public ProductionVO readOne(String code) throws SQLException {
 		// TODO Auto-generated method stub
 		con = getConnection();
-		String sql = "select * from product where code=?";
+		String sql = "select code, pname, cost, pnum, inum, sale, "
+				+ "case when gcode=\'A\' then \'컴퓨터\'"
+				+ "when gcode=\'B\' then \'냉장고\'"
+				+ "when gcode=\'C\' then \'냉장고소모품\' else \'없음\' end as gcode"
+				+ " from product where code=?";
 		pstmt = con.prepareStatement(sql);
 		System.out.println("Code = " + code);
 		pstmt.setString(1, code);
@@ -52,6 +56,7 @@ public class ProductionDAOImpl extends DAOBase implements ProductionDAO {
 	@Override
 	public int upgrade(ProductionVO vo) throws SQLException {
 		// TODO Auto-generated method stub
+		System.out.println(vo.toString());
 		return 0;
 	}
 
